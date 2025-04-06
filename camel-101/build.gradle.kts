@@ -37,7 +37,6 @@ dependencies {
     implementation("org.apache.camel:camel-csv:${camelVersion}")
     implementation("org.apache.camel:camel-ftp:${camelVersion}")
     implementation("org.apache.camel:camel-jsonpath:${camelVersion}")
-//    implementation("com.github.javafaker:javafaker:1.0.2")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.jeasy:easy-random-core:5.0.0")
 

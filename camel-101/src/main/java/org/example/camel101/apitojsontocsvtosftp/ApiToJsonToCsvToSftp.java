@@ -56,8 +56,9 @@ public class ApiToJsonToCsvToSftp {
                         .unmarshal()
                         .json(List.class)
                         .marshal(csvFormat)
+                        
                         .to(toSftp)
-                        .log("Uploaded file");
+                        .log("Uploaded file ${body}");
             }
         };
     }

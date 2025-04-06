@@ -35,7 +35,39 @@ java {
 tasks.withType<Test> {
     systemProperty("java.util.logging.manager", "org.jboss.logmanager.LogManager")
 }
+
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
     options.compilerArgs.add("-parameters")
+}
+
+
+tasks.register("buildUberJar") {
+    group = "build"
+    description = "Build Uber Jar"
+    doFirst {
+        project.extensions.extraProperties["quarkus.package.jar.enabled"] = true
+        project.extensions.extraProperties["quarkus.package.jar.type"] = "uber-jar"
+    }
+    dependsOn("build") // quarkus101-1.0-SNAPSHORT-runner.jar
+}
+
+tasks.register("buildJar") {
+    group = "build"
+    description = "Build Jar"
+    doFirst {
+        project.extensions.extraProperties["quarkus.package.type"] = "jar"
+        project.extensions.extraProperties["quarkus.package.jar.enabled"] = true
+    }
+    dependsOn("build")
+}
+
+tasks.register("buildNativeWithDocker") {
+    group = "build"
+    description = "Build Native"
+    doFirst {
+        project.extensions.extraProperties["quarkus.native.container-build"] = true
+        project.extensions.extraProperties["quarkus.package.type"] = "native"
+    }
+    dependsOn("build")
 }
