@@ -17,6 +17,4 @@ public class ExecutorConfig {
         // Tạo thread pool với tối đa 10 thread
         return Executors.newFixedThreadPool(2);
     }
-
-
 }

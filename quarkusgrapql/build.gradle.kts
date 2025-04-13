@@ -17,6 +17,8 @@ dependencies {
     implementation("io.quarkus:quarkus-smallrye-graphql")
     implementation("io.quarkus:quarkus-arc")
     implementation("net.datafaker:datafaker:2.1.0")
+    implementation("io.quarkus:quarkus-hibernate-orm-panache")
+    implementation("io.quarkus:quarkus-jdbc-postgresql")
     testImplementation("io.quarkus:quarkus-junit5")
 }
 
