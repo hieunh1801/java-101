@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class KakaoExtractProcessor implements Processor {
+public class KakaoKeywordPullProcessor implements Processor {
 
 
     @Override
