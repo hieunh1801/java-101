@@ -1,0 +1,20 @@
+### GET request to example server
+GET http://localhost:8080/trigger?sleep=10000
+
+
+#2025-04-17T23:10:18.536+09:00  INFO 41471 --- [springboot101] [io-8080-exec-15] o.h.s.A.CheckThreadApplication           : THREAD END
+#2025-04-17T23:10:18.701+09:00  INFO 41471 --- [springboot101] [io-8080-exec-16] o.h.s.A.CheckThreadApplication           : THREAD END
+#2025-04-17T23:10:18.888+09:00  INFO 41471 --- [springboot101] [io-8080-exec-17] o.h.s.A.CheckThreadApplication           : THREAD END
+#2025-04-17T23:10:19.071+09:00  INFO 41471 --- [springboot101] [io-8080-exec-18] o.h.s.A.CheckThreadApplication           : THREAD END
+#2025-04-17T23:10:19.247+09:00  INFO 41471 --- [springboot101] [io-8080-exec-19] o.h.s.A.CheckThreadApplication           : THREAD END
+#2025-04-17T23:12:30.070+09:00  INFO 41471 --- [springboot101] [io-8080-exec-11] o.h.s.A.CheckThreadApplication           : THREAD START
+#2025-04-17T23:12:30.549+09:00  INFO 41471 --- [springboot101] [io-8080-exec-12] o.h.s.A.CheckThreadApplication           : THREAD START
+#2025-04-17T23:12:30.717+09:00  INFO 41471 --- [springboot101] [io-8080-exec-13] o.h.s.A.CheckThreadApplication           : THREAD START
+#2025-04-17T23:12:30.890+09:00  INFO 41471 --- [springboot101] [io-8080-exec-14] o.h.s.A.CheckThreadApplication           : THREAD START
+#2025-04-17T23:12:31.052+09:00  INFO 41471 --- [springboot101] [io-8080-exec-15] o.h.s.A.CheckThreadApplication           : THREAD START
+#2025-04-17T23:12:31.214+09:00  INFO 41471 --- [springboot101] [io-8080-exec-16] o.h.s.A.CheckThreadApplication           : THREAD START
+#2025-04-17T23:12:31.372+09:00  INFO 41471 --- [springboot101] [io-8080-exec-17] o.h.s.A.CheckThreadApplication           : THREAD START
+#2025-04-17T23:12:31.521+09:00  INFO 41471 --- [springboot101] [io-8080-exec-18] o.h.s.A.CheckThreadApplication           : THREAD START
+#2025-04-17T23:12:31.687+09:00  INFO 41471 --- [springboot101] [io-8080-exec-19] o.h.s.A.CheckThreadApplication           : THREAD START
+##2025-04-17T23:12:31.848+09:00  INFO 41471 --- [springboot101] [nio-8080-exec-1] o.h.s.A.CheckThreadApplication           : THREAD START
+###

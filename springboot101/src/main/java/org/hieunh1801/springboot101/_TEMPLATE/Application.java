@@ -1,13 +1,13 @@
-package org.hieunh1801.queue101;
+package org.hieunh1801.springboot101._TEMPLATE;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Queue101Application {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Queue101Application.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }

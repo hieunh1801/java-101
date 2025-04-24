@@ -1,10 +1,10 @@
-package org.hieunh1801.queue101;
+package org.hieunh1801.springboot101;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Queue101ApplicationTests {
+class ApplicationTests {
 
     @Test
     void contextLoads() {
