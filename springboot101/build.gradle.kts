@@ -37,6 +37,7 @@ dependencies {
     implementation("org.apache.camel:camel-csv:${camelVersion}")
     implementation("org.apache.camel:camel-ftp:${camelVersion}")
     implementation("org.apache.camel:camel-jsonpath:${camelVersion}")
+    implementation("org.apache.camel:camel-disruptor:${camelVersion}")
 
     // test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
