@@ -129,9 +129,13 @@ public class TaskQueuePriority implements ApplicationRunner {
         // Không hoạt động
         List<Task> tasks = new ArrayList<>();
         int count = 1;
-        tasks.add(new Task(count++,"CAFE24", 2, "KAKAO", 5));
-        tasks.add(new Task(count++,"KAKAO", 5, "CAFE24", 2));
-        tasks.add(new Task(count++,"KAKAO", 5, "CAFE24", 2));
+//        tasks.add(new Task(count++,"CAFE24", 2, "KAKAO", 5));
+//        tasks.add(new Task(count++,"KAKAO", 5, "CAFE24", 2));
+//        tasks.add(new Task(count++,"KAKAO", 5, "CAFE24", 2));
+
+        tasks.add(new Task(count++,"CAFE24", 10, "KAKAO", 10));
+        tasks.add(new Task(count++,"KAKAO", 20, "CAFE24", 20));
+        tasks.add(new Task(count++,"KAKAO", 20, "CAFE24", 20));
 
         for (Task task: tasks) {
             Map<String, Object> headers = new HashMap<>();
