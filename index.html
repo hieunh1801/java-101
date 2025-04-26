@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f9f9f9;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .heart {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      transform: rotate(-45deg);
+      animation: beat 1s infinite;
+      box-shadow: 0 0 10px red;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 50px;
+      top: 0;
+      z-index: -1px;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      opacity: 0;
+      animation: blink 3s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+        box-shadow: 0 0 10px red;
+      }
+      50% {
+        transform: scale(1.01) rotate(-45deg);
+        box-shadow: 0 0 30px red;
+      }
+    }
+
+    @keyframes blink {
+      0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.5);
+      }
+    }
+
+    .text {
+      font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+      margin-top: 50px;
+      font-size: 24px;
+      font-weight: bold;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="heart" id="heart">
+    <!-- Sparkles sẽ được thêm bằng JavaScript -->
+  </div>
+  <div class="text">
+    遇见你，是我最美的幸运。^^
+  </div>
+
+  <script>
+    const heart = document.getElementById('heart');
+   // const colors = ['#ff4d4d', '#ffa500', '#ffff33', '#00ff99', '#33ccff', '#cc66ff', '#ff66b2'];
+   const colors = ['white', 'white', 'white', 'white', 'white', 'white', 'white'];
+
+    function createSparkle() {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+
+      // Random màu
+      sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+      // Random vị trí quanh trái tim
+      sparkle.style.top = (Math.random() * 150 - 25) + 'px'; // từ -25px đến 125px
+      sparkle.style.left = (Math.random() * 150 - 25) + 'px';
+      sparkle.style.zIndex = "-1000px";
+
+      // Random animation delay
+      sparkle.style.animationDelay = (Math.random() * 1.5) + 's';
+
+      heart.appendChild(sparkle);
+
+      // Xoá sparkle sau 3s để không bị nặng trình duyệt
+      setTimeout(() => {
+        sparkle.remove();
+      }, 3000);
+    }
+
+    // Tạo sparkle mỗi 300ms
+    setInterval(createSparkle, 300);
+  </script>
+</body>
+</html>

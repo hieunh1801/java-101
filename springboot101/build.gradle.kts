@@ -3,6 +3,7 @@ plugins {
     id("org.springframework.boot") version "3.4.4"
     id("io.spring.dependency-management") version "1.1.7"
 }
+val springCloudVersion by extra("2024.0.1")
 
 group = "org.hieunh1801"
 version = "0.0.1-SNAPSHOT"
@@ -28,7 +29,16 @@ dependencies {
     val javaFakerVersion = "1.0.2"
 
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+    implementation("org.springframework.retry:spring-retry")
+    implementation("com.google.guava:guava:33.4.8-jre")
+
+
+//    implementation("io.github.resilience4j:resilience4j-spring-boot3")
+//    implementation("io.github.resilience4j:resilience4j-feign")
+//    implementation("io.github.resilience4j:resilience4j-ratelimiter")
 
     // camel
     implementation("org.apache.camel.springboot:camel-spring-boot-starter:${camelVersion}")
@@ -42,6 +52,7 @@ dependencies {
     // test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
     // other
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
@@ -49,6 +60,11 @@ dependencies {
 
 
 
+}
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
+    }
 }
 
 tasks.withType<Test> {

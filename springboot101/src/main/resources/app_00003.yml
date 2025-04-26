@@ -1,0 +1,7 @@
+resilience4j:
+    ratelimiter:
+        instances:
+            tableauRateLimiter:
+                limitForPeriod: 1 # s? l?n g?i trong 1 l?n
+                limitRefreshPeriod: 20s # chu kì làm m?i
+                timeoutDuration: 30s # th?i gian ??i n?u b? gi?i h?n
