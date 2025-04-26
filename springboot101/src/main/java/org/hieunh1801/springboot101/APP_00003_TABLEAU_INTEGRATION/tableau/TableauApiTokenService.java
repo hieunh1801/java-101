@@ -3,6 +3,7 @@ package org.hieunh1801.springboot101.APP_00003_TABLEAU_INTEGRATION.tableau;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Component;
@@ -14,17 +15,18 @@ import java.util.Map;
 
 @Slf4j
 @Component("tableauTokenService")
+@DependsOn("tableauInformation")
 public class TableauApiTokenService {
     private Map<String, Object> serverTokenMap = new HashMap<>();
     @Autowired
     private RestTemplate restTemplate;
 
-    public TableauApiTokenService() {
+    public TableauApiTokenService(TableauInformation tableauInformation) {
         log.info("INIT TableauApiTokenService");
         Map<String, Object> tokenMap = new HashMap<>();
         tokenMap.put("token", "123kljksdf");
         tokenMap.put("tokenExpiredAt", System.currentTimeMillis() + 15 * 60 * 1000);
-        serverTokenMap.put(TableauInformation.HOST, tokenMap);
+        serverTokenMap.put(tableauInformation.HOST, tokenMap);
     }
 
 

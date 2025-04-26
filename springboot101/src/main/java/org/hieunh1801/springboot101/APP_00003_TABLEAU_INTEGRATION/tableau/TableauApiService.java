@@ -13,6 +13,9 @@ import java.util.Map;
 @Slf4j
 @Service
 public class TableauApiService {
+
+    @Autowired
+    private TableauInformation tableauInformation;
     @Autowired
     private TableauApiClient tableauApiClient;
 
