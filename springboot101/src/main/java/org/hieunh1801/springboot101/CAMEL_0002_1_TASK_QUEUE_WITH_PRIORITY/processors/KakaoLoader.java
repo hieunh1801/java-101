@@ -19,6 +19,7 @@ public class KakaoLoader implements Processor {
         int priority = (int) headers.get("priority");
         log.info("taskId=[{}] priority=[{}] KakaoLoader started wait {}s", taskId, priority, runTime);
         Thread.sleep(runTime* 1000L);
+        exchange.getIn().setHeader("handleEndTime", System.currentTimeMillis());
         log.info("taskId=[{}] KakaoLoader ended", taskId);
     }
 }

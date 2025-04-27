@@ -14,9 +14,6 @@ public class ExchangeComparator implements Comparator<Exchange> {
         Integer p2 = e2.getIn().getHeader("priority", 0, Integer.class);
         int taskP1Id = e1.getIn().getHeader("taskId", Integer.class);
         int taskP2Id = e2.getIn().getHeader("taskId", Integer.class);
-        String route1Id = e1.getIn().getHeader("routeId", String.class);
-        String route2Id = e2.getIn().getHeader("routeId", String.class);
-        log.info("Route1Id: {}, Route2Id: {}", route1Id, route2Id);
         log.info("Task1Id: {}, Task2Id: {}", taskP1Id, taskP2Id);
         log.info("P1: {}, P2: {}", p1, p2);
         return p2.compareTo(p1);

@@ -113,8 +113,13 @@ public class TaskQueuePriority implements ApplicationRunner {
                             long endTime = System.currentTimeMillis();
                             exchange.getIn().setHeader("endTime", endTime);
                             exchange.getIn().setHeader("runTimeMs", endTime - startTime);
+
+                            long handleStartTime = (long) headers.get("handleStartTime");
+                            long handleEndTime = (long) headers.get("handleEndTime");
+                            long handleTime = handleEndTime - handleStartTime;
+                            exchange.getIn().setHeader("handleTime", handleTime);
                         })
-                        .log("taskId=[${header.taskId}] END ${header.taskId} in ${header.runTimeMs} ms");
+                        .log("taskId=[${header.taskId}] END ${header.taskId} in ${header.runTimeMs} ms; handleTime=${header.handleTime}");
             }
         };
     }
@@ -134,8 +139,15 @@ public class TaskQueuePriority implements ApplicationRunner {
 //        tasks.add(new Task(count++,"KAKAO", 5, "CAFE24", 2));
 
         tasks.add(new Task(count++,"CAFE24", 10, "KAKAO", 10));
-        tasks.add(new Task(count++,"KAKAO", 20, "CAFE24", 20));
-        tasks.add(new Task(count++,"KAKAO", 20, "CAFE24", 20));
+        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
 
         for (Task task: tasks) {
             Map<String, Object> headers = new HashMap<>();

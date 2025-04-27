@@ -14,6 +14,7 @@ public class Cafe24Extractor implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
         Map<String, Object> headers = exchange.getIn().getHeaders();
+        exchange.getIn().setHeader("handleStartTime", System.currentTimeMillis());
         int taskId = (int) headers.get("taskId");
         int runTime = (int) headers.get("fromTime");
         int priority = (int) headers.get("priority");

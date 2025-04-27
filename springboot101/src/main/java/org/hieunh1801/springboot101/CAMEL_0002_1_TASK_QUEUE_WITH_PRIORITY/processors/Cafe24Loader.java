@@ -14,11 +14,13 @@ public class Cafe24Loader implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
         Map<String, Object> headers = exchange.getIn().getHeaders();
+
         int taskId = (int) headers.get("taskId");
         int runTime = (int) headers.get("toTime");
         int priority = (int) headers.get("priority");
         log.info("taskId=[{}] priority=[{}] Cafe24Loader started wait {}s", taskId, priority, runTime);
         Thread.sleep(runTime * 1000L);
+        exchange.getIn().setHeader("handleEndTime", System.currentTimeMillis());
         log.info("taskId=[{}] Cafe24Loader ended", taskId);
     }
 }

@@ -14,10 +14,11 @@ public class KakaoExtractor implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
         Map<String, Object> headers = exchange.getIn().getHeaders();
+        exchange.getIn().setHeader("handleStartTime", System.currentTimeMillis());
         int taskId = (int) headers.get("taskId");
         int runTime = (int) headers.get("fromTime");
         int priority = (int) headers.get("priority");
-        log.info("taskId=[{}]  priority=[{}] KakaoExtractor started wait {}s", taskId, priority, runTime);
+        log.info("taskId=[{}] priority=[{}] KakaoExtractor started wait {}s", taskId, priority, runTime);
         Thread.sleep(runTime*1000L);
         log.info("taskId=[{}] KakaoExtractor ended", taskId);
     }
