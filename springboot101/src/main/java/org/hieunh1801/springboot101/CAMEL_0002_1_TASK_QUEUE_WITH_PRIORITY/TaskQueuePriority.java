@@ -139,15 +139,15 @@ public class TaskQueuePriority implements ApplicationRunner {
 //        tasks.add(new Task(count++,"KAKAO", 5, "CAFE24", 2));
 
         tasks.add(new Task(count++,"CAFE24", 10, "KAKAO", 10));
-        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
-        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
-        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
-        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
-        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
-        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
-        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
-        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
-        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+        tasks.add(new Task(count++,"KAKAO", 5, "CAFE24", 7));
+        tasks.add(new Task(count++,"KAKAO", 6, "CAFE24", 4));
+//        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+//        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+//        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+//        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+//        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+//        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
+//        tasks.add(new Task(count++,"KAKAO", 10, "CAFE24", 10));
 
         for (Task task: tasks) {
             Map<String, Object> headers = new HashMap<>();

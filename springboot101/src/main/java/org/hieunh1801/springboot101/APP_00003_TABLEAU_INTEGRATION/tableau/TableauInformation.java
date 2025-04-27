@@ -10,17 +10,9 @@ import java.util.Map;
 @Data
 @Component
 public class TableauInformation {
-<<<<<<< HEAD
-    public static final String HOST = "";
-    public static final String SITE = "";
-    public static final String PAT_NAME = "";
-    public static final String PAT_VALUE = "";
-    public static final String API_VERSION = "";
-    public static final String SITE_ID = "";
-=======
+
     @Value("${tableau.host}")
     public String HOST;
->>>>>>> cae2838 (Tableau Integration)
 
     @Value("${tableau.site}")
     public String SITE;
