@@ -43,11 +43,17 @@ dependencies {
     // camel
     implementation("org.apache.camel.springboot:camel-spring-boot-starter:${camelVersion}")
     implementation("org.apache.camel.springboot:camel-http-starter:${camelVersion}")
+    implementation("org.apache.camel.springboot:camel-quartz-starter:${camelVersion}")
     implementation("org.apache.camel:camel-jackson:${camelVersion}")
     implementation("org.apache.camel:camel-csv:${camelVersion}")
     implementation("org.apache.camel:camel-ftp:${camelVersion}")
     implementation("org.apache.camel:camel-jsonpath:${camelVersion}")
     implementation("org.apache.camel:camel-disruptor:${camelVersion}")
+
+    //
+//    implementation("io.hawt:hawtio-springboot:4.3.0")
+//    implementation("org.apache.camel.springboot:camel-management-starter:4.3.0")
+//    implementation("org.apache.camel.springboot:camel-spring-boot-xml-starter:4.3.0")
 
     // test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
